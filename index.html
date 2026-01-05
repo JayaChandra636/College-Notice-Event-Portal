@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>College Notice & Event Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- External CSS -->
+<link rel="stylesheet" href="test3.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="nav-title">College Notice & Event Portal</div>
+    <div class="nav-subtitle">Official College Information System</div>
+
+    <div class="top-actions hidden" id="topActions">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search notices & events...">
+        </div>
+        <button class="icon-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
+        <button class="icon-btn" onclick="toggleProfile()">👤</button>
+    </div>
+
+    <div class="profile-panel" id="profilePanel">
+        <div class="profile-header">
+            <div class="avatar" id="avatar">U</div>
+            <div class="profile-name" id="profileName">User</div>
+        </div>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+</div>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="login-wrapper">
+    <div class="login-box glass">
+        <h2>Login</h2>
+
+        <input id="username" placeholder="Email">
+        <input id="password" type="password" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+
+        <p style="margin-top:10px">
+            Don't have an account?
+            <span style="color:#4da3ff;cursor:pointer" onclick="showSignup()">Create account</span>
+        </p>
+    </div>
+</div>
+
+<!-- SIGNUP PAGE (NEW) -->
+<div id="signupPage" class="login-wrapper hidden">
+    <div class="login-box glass">
+        <h2>Student Signup</h2>
+
+        <input id="signupName" placeholder="Full Name">
+        <input id="signupEmail" placeholder="Email">
+        <input id="signupPass" type="password" placeholder="Password">
+
+        <button onclick="signup()">Create Account</button>
+
+        <p style="margin-top:10px">
+            Already have an account?
+            <span style="color:#4da3ff;cursor:pointer" onclick="showLogin()">Login</span>
+        </p>
+    </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="dashboard hidden glass">
+
+    <div id="adminControls" class="hidden">
+
+        <div class="section-card glass">
+            <h3>➕ Add Notice</h3>
+
+            <label>
+                <input type="checkbox" id="importantNotice"> Mark as Important
+            </label>
+
+            <textarea id="noticeText" placeholder="Enter notice text..."></textarea>
+
+            <button class="primary" onclick="addNotice()">Add Notice</button>
+        </div>
+
+        <div class="section-card glass event-form">
+            <h3>➕ Add Event</h3>
+
+            <label>Event Title</label>
+            <input id="eventTitle">
+
+            <label>Description</label>
+            <textarea id="eventDesc" rows="3"></textarea>
+
+            <label>Date</label>
+            <input id="eventDate" type="date">
+
+            <button class="primary" onclick="addEvent()">Add Event</button>
+        </div>
+    </div>
+
+    <div class="section-card glass">
+        <h3>📢 Notices</h3>
+        <div id="notices"></div>
+    </div>
+
+    <div class="section-card glass">
+        <h3>📅 Events</h3>
+        <div id="events"></div>
+    </div>
+</div>
+
+<!-- External JS -->
+<script type="module" src="test3.js"></script>
+
+</body>
+</html>
